@@ -3,7 +3,7 @@ import MoonIcon from "./components/icons/MoonIcon";
 
 const App = () => {
     return (
-        <div className="min-h-screen bg-gray-200 bg-[url('./src/assets/images/bg-mobile-light.jpg')] bg-contain bg-no-repeat">
+        <div className="min-h-screen bg-gray-200 bg-mobile-bg bg-contain bg-no-repeat">
             <header className="container mx-auto px-6">
                 <section className="flex justify-between py-10">
                     <h1 className="text-3xl font-semibold uppercase tracking-[0.4em] text-white">
