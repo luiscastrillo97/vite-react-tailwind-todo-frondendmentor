@@ -58,7 +58,7 @@ const App = () => {
     };
 
     return (
-        <div className="min-h-screen bg-gray-300 bg-mobile-light bg-contain bg-no-repeat sm:bg-desktop-light">
+        <div className="min-h-screen bg-gray-300 bg-mobile-light bg-contain bg-no-repeat transition-all duration-1000 dark:bg-gray-900 dark:bg-mobile-dark sm:bg-desktop-light sm:dark:bg-desktop-dark">
             <Header />
 
             <main className="container mx-auto px-6">
@@ -79,7 +79,7 @@ const App = () => {
                 <TodoFilter changeFilter={changeFilter} filter={filter} />
             </main>
 
-            <footer className="my-10 px-6 text-center text-gray-500">
+            <footer className="my-10 px-6 text-center text-gray-500 transition-all duration-1000 dark:text-gray-600">
                 Drag and drop to reorder list
             </footer>
         </div>

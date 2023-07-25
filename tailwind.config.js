@@ -6,8 +6,11 @@ export default {
             backgroundImage: {
                 "mobile-light": "url('./assets/images/bg-mobile-light.jpg')",
                 "desktop-light": "url('./assets/images/bg-desktop-light.jpg')",
+                "mobile-dark": "url('./assets/images/bg-mobile-dark.jpg')",
+                "desktop-dark": "url('./assets/images/bg-desktop-dark.jpg')",
             },
         },
     },
+    darkMode: "class",
     plugins: [],
 };

@@ -15,7 +15,7 @@ const TodoList = ({ todos, updateTodo, removeTodo, filter }) => {
         }
     };
     return (
-        <section className="mt-5 rounded-t-md bg-white">
+        <section className="mt-5 overflow-hidden rounded-t-md bg-white transition-all duration-1000 dark:bg-gray-800">
             {todos.length !== 0 ? (
                 todos.map((todo) => (
                     <TodoItem
@@ -26,7 +26,7 @@ const TodoList = ({ todos, updateTodo, removeTodo, filter }) => {
                     />
                 ))
             ) : (
-                <article className="grid place-items-center gap-4 border-b px-5 py-4 text-gray-800">
+                <article className="grid place-items-center gap-4 border-b px-5 py-4 text-gray-800 dark:border-gray-700 dark:text-gray-400">
                     {textToPrint()}
                 </article>
             )}
