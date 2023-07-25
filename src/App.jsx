@@ -52,7 +52,7 @@ const App = () => {
                     </footer>
                 </section>
             </main>
-            <section className="container mt-4 px-6">
+            <section className="container mx-auto mt-4 px-6">
                 <article className="flex justify-center gap-6 rounded-md bg-white py-4">
                     <button className="text-blue-600">All</button>
                     <button className="hover:text-blue-600">Active</button>
