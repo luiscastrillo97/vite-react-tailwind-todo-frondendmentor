@@ -1,14 +1,18 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Header from "./components/Header";
 import TodoComputed from "./components/TodoComputed";
 import TodoCreate from "./components/TodoCreate";
 import TodoFilter from "./components/TodoFilter";
 import TodoList from "./components/TodoList";
 
-const initialStateTodos = [];
+const initialStateTodos = JSON.parse(localStorage.getItem("todos")) || [];
 
 const App = () => {
     const [todos, setTodos] = useState(initialStateTodos);
+
+    useEffect(() => {
+        localStorage.setItem("todos", JSON.stringify(todos));
+    }, [todos]);
 
     const createTodo = (title) => {
         const newTodo = {
@@ -46,7 +50,12 @@ const App = () => {
     const filteredTodos = () => {
         switch (filter) {
             case "all":
-                return todos;
+                return todos.sort((a, b) => {
+                    // if (a.completed === b.completed) return 0;
+                    // if (a.completed) return 1;
+                    // if (!a.completed) return -1;
+                    return a.completed - b.completed || a.id - b.id;
+                });
                 break;
             case "active":
                 return todos.filter((todo) => !todo.completed);
@@ -61,7 +70,7 @@ const App = () => {
         <div className="min-h-screen bg-gray-300 bg-mobile-light bg-contain bg-no-repeat transition-all duration-1000 dark:bg-gray-900 dark:bg-mobile-dark sm:bg-desktop-light sm:dark:bg-desktop-dark">
             <Header />
 
-            <main className="container mx-auto px-6">
+            <main className="container mx-auto max-w-xl px-6">
                 <TodoCreate createTodo={createTodo} />
 
                 <TodoList
@@ -79,7 +88,7 @@ const App = () => {
                 <TodoFilter changeFilter={changeFilter} filter={filter} />
             </main>
 
-            <footer className="my-10 px-6 text-center text-gray-500 transition-all duration-1000 dark:text-gray-600">
+            <footer className="mx-auto my-10 max-w-xl px-6 text-center text-gray-500 transition-all duration-1000 dark:text-gray-600">
                 Drag and drop to reorder list
             </footer>
         </div>
