@@ -4,7 +4,8 @@ export default {
     theme: {
         extend: {
             backgroundImage: {
-                "mobile-bg": "url('./assets/images/bg-mobile-light.jpg')",
+                "mobile-light": "url('./assets/images/bg-mobile-light.jpg')",
+                "desktop-light": "url('./assets/images/bg-desktop-light.jpg')",
             },
         },
     },
